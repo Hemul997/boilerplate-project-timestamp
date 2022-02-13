@@ -35,11 +35,11 @@ var listener = app.listen(process.env.PORT, function () {
 app.get("/api/", function(req, res) {
   unixDate = Date.now();
   
-  currDate = new Date(utcDate);
+  currDate = new Date(unixDate);
 
   utcDate = currDate.toUTCString();
 
-  res.json({unix: unixDate, utc: utcDate});
+  res.json({unix: unixDate, utc: utcDate });
 });
 
 
