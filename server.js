@@ -43,8 +43,9 @@ app.get("/api/", function(req, res) {
 });
 
 
-app.get("/api/:date?", function(req, res) {  
-  reqDate = new Date(req.params.date);
+app.get("/api/:date?", function(req, res) {
+  isNaN(Number(req.params.date)) ? reqDate = new Date(req.params.date) 
+    : reqDate = new Date(Number(req.params.date))
 
   if (reqDate.toUTCString() != 'Invalid Date'){
     utcDate = reqDate.toUTCString();
